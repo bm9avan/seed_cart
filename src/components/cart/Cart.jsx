@@ -1,23 +1,24 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import styles from './Cart.module.css'
 import { GiCancel } from "react-icons/gi";
 
-const CartView = ({ onCancel }) => {
-    const [cartData, setCartdata] = useState([])
+const CartView = ({ onCancel, cartData }) => {
     function triggerHideHandler() {
         onCancel()
     }
     return (
-        <div className={styles.backdrop}>
+        <div>
+            <div className={styles.backdrop} onClick={triggerHideHandler}></div>
             <div className={styles.box}>
+                <h2>My Cart</h2>
                 <GiCancel className={styles.cancel} onClick={triggerHideHandler} />
-                <ul>
+                <ul className={styles.ul}>
                     {cartData.map((eachItem) => {
-                        return <li>
-                            {eachItem.title}
-                            {eachItem.price}
-                            {eachItem.qty}
+                        return <li key={'cart' + eachItem.Id} className={styles.seed}>
+                            <h3 className={styles.title}>{eachItem.title}</h3>
+                            <span className={styles.qty}>{eachItem.qty}</span>
+                            <span className={styles.price}>₹{eachItem.price}</span>
                         </li>
                     })}
                 </ul>
@@ -27,10 +28,10 @@ const CartView = ({ onCancel }) => {
 }
 
 
-const Cart = ({ onCancel }) => {
+const Cart = ({ onCancel, cartData }) => {
     return (
         <div>
-            {ReactDOM.createPortal(<CartView onCancel={onCancel} />, document.getElementById('cartView'))}
+            {ReactDOM.createPortal(<CartView onCancel={onCancel} cartData={cartData} />, document.getElementById('cartView'))}
         </div>
     )
 }

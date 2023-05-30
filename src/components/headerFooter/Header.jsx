@@ -4,14 +4,14 @@ import { BiCart } from "react-icons/bi";
 import seedLand from "../../assests/seedLand.jpg"
 import Cart from '../cart/Cart';
 
-const Header = () => {
+const Header = ({ cartData }) => {
     const [showCart, setShowCart] = useState(false)
     function hideCartHandler() {
         setShowCart(false)
     }
     return (
         <>
-            {showCart && <Cart onCancel={hideCartHandler} />}
+            {showCart && <Cart onCancel={hideCartHandler} cartData={cartData} />}
             <div className={styles.outer}>
                 <header className={styles.header}>
                     <p>

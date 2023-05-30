@@ -9,20 +9,22 @@
 }
 
 .box {
-    color: aqua;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: fixed;
     top: 15vh;
     left: 10%;
     width: 80%;
-    height: 68%;
+    /* height: 68%; */
     z-index: 100;
     overflow: hidden;
     background: white;
     box-shadow: 0 2px 8px rgba(247, 243, 243, 0.26);
     border-radius: 10px;
+}
+
+.box h2{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
 }
 
 .cancel {
@@ -34,4 +36,40 @@
     height: 30px;
     float: right;
     padding: 2px;
+}
+
+.ul {
+    position: relative;
+    top: 20px;
+    padding-bottom: 10px;
+    padding-right: 40px;
+}
+
+.seed {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #cccccc;
+}
+
+.seed h3 {
+    margin: 0 0 0.25rem 0;
+    width: 30%;
+}
+
+.price {
+    margin-top: 0.25rem;
+    font-weight: bold;
+    color: #ad5502;
+    font-size: 1.25rem;
+}
+
+.qty {
+    float: left;
+    margin-top: 0.25rem;
+    font-weight: bold;
+    color: #1d0f02;
+    font-size: 1.25rem;
 }
