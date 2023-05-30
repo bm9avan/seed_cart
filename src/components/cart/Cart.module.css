@@ -1,0 +1,37 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.box {
+    color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 15vh;
+    left: 10%;
+    width: 80%;
+    height: 68%;
+    z-index: 100;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 8px rgba(247, 243, 243, 0.26);
+    border-radius: 10px;
+}
+
+.cancel {
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    float: right;
+    padding: 2px;
+}
