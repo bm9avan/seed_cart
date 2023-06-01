@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ReactDOM from 'react-dom'
 import styles from './Cart.module.css'
 import { GiCancel } from "react-icons/gi";
+import { CartContextData } from '../../store/cart-context';
 
-const CartView = ({ onCancel, cartData }) => {
+const CartView = ({ onCancel }) => {
+    const ctx = useContext(CartContextData)
+
     function triggerHideHandler() {
         onCancel()
     }
@@ -14,7 +17,7 @@ const CartView = ({ onCancel, cartData }) => {
                 <h2>My Cart</h2>
                 <GiCancel className={styles.cancel} onClick={triggerHideHandler} />
                 <ul className={styles.ul}>
-                    {cartData.map((eachItem) => {
+                    {ctx.cartData.map((eachItem) => {
                         return <li key={'cart' + eachItem.Id} className={styles.seed}>
                             <h3 className={styles.title}>{eachItem.title}</h3>
                             <span className={styles.qty}>{eachItem.qty}</span>

@@ -2,7 +2,8 @@ import React from 'react'
 import styles from './Seeds.module.css'
 import EachSeed from './EachSeed';
 
-const Seeds = ({ onAddingToCart }) => {
+const Seeds = () => {
+
     const seedData = [
         {
             Id: "s01",
@@ -157,7 +158,7 @@ const Seeds = ({ onAddingToCart }) => {
             <br />
             <div className={styles.seedContainer}>
                 {seedData.map(seed => (
-                    <EachSeed key={seed.Id} seed={seed} onAddingToCart={onAddingToCart} />
+                    <EachSeed key={seed.Id} seed={seed} />
                 ))}
             </div>
         </div>
