@@ -1,30 +1,36 @@
-import { useState } from 'react';
+import { useReducer } from 'react';
 import './App.css';
 import Header from './components/headerFooter/Header';
 import Seeds from './components/seeds-body/Seeds';
 
 function App() {
-  const [cartData, setCartdata] = useState([])
-  function cartDataHandler(newItem) {
-    setCartdata((prevData) => {
-      let i = -1;
-      let newData = prevData.filter((eachItem) => {
-        if (eachItem.title === newItem.title) {
-          i = 1
-          eachItem.qty += newItem.qty
-          eachItem.qty = eachItem.qty < 5 ? eachItem.qty : 5
-        }
-        return eachItem
-      })
-      if (i > 0) {
-        return [...newData]
+  const [cartDataState, dispatch] = useReducer((prevData, action) => {
+    let i = -1;
+    let newData = prevData.filter((eachItem) => {
+      if (eachItem.title === action.title) {
+        console.log('before', eachItem.qty, typeof(eachItem.qty))
+        i = 1
+        eachItem.qty += action.qty
+        console.log('befire after', eachItem.qty, typeof (eachItem.qty))
+        eachItem.qty = eachItem.qty <= 5 ? eachItem.qty : 5
+        console.log('after', eachItem.qty)
       }
-      return [...prevData, newItem]
+      return eachItem
     })
+    console.log('before')
+    if (i > 0) {
+      return [...newData]
+    }
+    return [...prevData, action]
+  }, [])
+
+  function cartDataHandler(newItem) {
+    dispatch(newItem)
   }
+
   return (
     <div className="App">
-      <Header cartData={cartData} />
+      <Header cartData={cartDataState} />
       <Seeds onAddingToCart={cartDataHandler} />
     </div>
   );
