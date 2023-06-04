@@ -11,13 +11,13 @@ const CartView = ({ onCancel }) => {
     return (
         <div>
             <div className={styles.backdrop} onClick={onCancel}></div>
-            <div className={styles.box}>
+            <div className={`${styles.box} ${ctx.cartData.length >= 8 ? styles.scroll: ''}`}>
                 <h2>My Cart</h2>
                 <GiCancel className={styles.cancel} onClick={onCancel} />
                 <ul className={styles.ul}>
                     {!ctx.cartData.length && <h3 className={styles.seed}> no items added!</h3>}
                     {ctx.cartData.map((eachItem) => {
-                        return <EachCartItem key={'cart' + eachItem.Id} eachItem={eachItem}/>
+                        return <EachCartItem key={'cart' + eachItem.Id} eachItem={eachItem} />
                     })}
                 </ul>
                 <h4 className={styles.total}>Total Price : ₹{ctx.totalPrice} </h4>
