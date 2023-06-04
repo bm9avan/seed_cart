@@ -14,8 +14,8 @@ const EachSeed = ({ seed }) => {
             <p>{seed.description}</p>
             <br />
             <div>
-                <input type="number" id={'no' + seed.Id} min={1} max={5} defaultValue={qty} className={styles.no} onChange={(event) => { setQty(parseInt(event.target.value)) }} />
-                <button className={styles.btn} onClick={() => { ctx.onAddingToCart({ Id: seed.Id, title: seed.title, price: seed.price, qty }) }}> + Add</button>
+                <input type="number" value={qty} id={'no' + seed.Id} min={1} max={5} className={styles.no} onChange={(event) => { setQty(parseInt(event.target.value)) }} />
+                <button className={styles.btn} onClick={() => { setQty(1); ctx.onAddingToCart({ Id: seed.Id, title: seed.title, price: seed.price, qty }); console.log(qty)}}> + Add</button>
             </div>
         </div>
     )

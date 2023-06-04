@@ -67,9 +67,34 @@
 }
 
 .qty {
-    float: left;
-    margin-top: 0.25rem;
-    font-weight: bold;
-    color: #1d0f02;
+    display: flex;
+    width: 20%;
+}
+
+.qty input{
     font-size: 1.25rem;
+    font-weight: bold;
+    width: 30%;
+    height: 26px;
+}
+
+.btn {
+    cursor: pointer;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #2c0d00;
+    color: white;
+    margin-left: 10px;
+    width: 50%;
+    height: 30px;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: rgb(145, 116, 80);
+}
+
+.total{
+    text-align: center;
 }

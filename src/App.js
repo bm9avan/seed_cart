@@ -1,4 +1,3 @@
-import { useReducer } from 'react';
 import './App.css';
 import Header from './components/headerFooter/Header';
 import Seeds from './components/seeds-body/Seeds';
