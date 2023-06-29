@@ -10,46 +10,52 @@ export const CartContextData = React.createContext({
 
 const CartContext = (props) => {
     const [cartDataState, dispatch] = useReducer((prevData, action) => {
-        let i = -1, totalPrice = prevData.totalPrice, noOfItems = prevData.noOfItems;
+        let arrayData = prevData.arrayData, totalPrice = prevData.totalPrice, noOfItems = prevData.noOfItems;
         if (action.type === 'ADD') {
-            //map function cart array
-            let newData = prevData.arrayData.filter((eachItem) => {
-                if (eachItem.title === action.newItem.title) {
-                    i = 1
-                    let prevQty = eachItem.qty;
-                    eachItem.qty += action.newItem.qty
-                    eachItem.qty = eachItem.qty <= 5 ? eachItem.qty : 5
-                    if (prevQty !== eachItem.qty) {
-                        noOfItems += (eachItem.qty - prevQty)
-                        totalPrice += (eachItem.qty - prevQty) * (eachItem.price)
-                    }
+            let indexToIncrease = arrayData.findIndex((item) => {
+                if (item.Id === action.newItem.Id) {
+                    return true;
                 }
-                return eachItem
+                return false
             })
-            if (i > 0) {
-                return { arrayData: [...newData], totalPrice, noOfItems }
+            if (indexToIncrease !== -1) {
+                let prevQty = arrayData[indexToIncrease].qty
+                let substractQty = prevQty
+                arrayData[indexToIncrease].qty += action.newItem.qty
+                if (arrayData[indexToIncrease].qty > 5) {
+                    substractQty = prevQty + arrayData[indexToIncrease].qty - 5
+                    arrayData[indexToIncrease].qty = 5
+                }
+                if (prevQty === arrayData[indexToIncrease].qty) {
+                    return { arrayData, totalPrice, noOfItems }
+                }
+                totalPrice += (arrayData[indexToIncrease].qty - substractQty) * (arrayData[indexToIncrease].price)
+                noOfItems += (arrayData[indexToIncrease].qty - substractQty)
+                return { arrayData, totalPrice, noOfItems }
             }
+
             return { arrayData: [...prevData.arrayData, action.newItem], totalPrice: (totalPrice + (action.newItem.price * action.newItem.qty)), noOfItems: (noOfItems + action.newItem.qty) }
         }
         if (action.type === 'REMOVE') {
-            let newData = prevData.arrayData.filter((eachItem) => {
-                if (eachItem.Id === action.removeItem.Id) {
-                    let prevQty = eachItem.qty;
-                    eachItem.qty = action.removeItem.qty
-                    if (eachItem.qty === 0) {
-                        noOfItems -= prevQty
-                        totalPrice -= (prevQty) * (eachItem.price)
-                        return false;
-                    }
-                    if (eachItem.qty !== 0) {
-                        noOfItems += (eachItem.qty - prevQty)
-                        totalPrice += (eachItem.qty - prevQty) * (eachItem.price)
-                        return eachItem
-                    }
+            let indexToDecrease = arrayData.findIndex((item) => {
+                if (item.Id === action.removeItem.Id) {
+                    return true;
                 }
-                return eachItem
+                return false
             })
-            return { arrayData: [...newData], totalPrice, noOfItems }
+            let prevQty = arrayData[indexToDecrease].qty;
+            arrayData[indexToDecrease].qty = action.removeItem.qty
+            if (arrayData[indexToDecrease].qty === 0) {
+                noOfItems -= prevQty
+                totalPrice -= (prevQty) * (arrayData[indexToDecrease].price)
+                arrayData.splice(indexToDecrease, 1)
+                return { arrayData, totalPrice, noOfItems }
+            }
+            if (arrayData[indexToDecrease].qty !== 0) {
+                noOfItems += (arrayData[indexToDecrease].qty - prevQty)
+                totalPrice += (arrayData[indexToDecrease].qty - prevQty) * (arrayData[indexToDecrease].price)
+            }
+            return { arrayData, totalPrice, noOfItems }
         }
     }, { arrayData: [], totalPrice: 0, noOfItems: 0 })
 
