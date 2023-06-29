@@ -13,7 +13,7 @@ const CartContext = (props) => {
         let arrayData = prevData.arrayData, totalPrice = prevData.totalPrice, noOfItems = prevData.noOfItems;
         if (action.type === 'ADD') {
             let indexToIncrease = arrayData.findIndex((item) => {
-                if (item.Id === action.newItem.Id) {
+                if (item.id === action.newItem.id) {
                     return true;
                 }
                 return false
@@ -38,7 +38,7 @@ const CartContext = (props) => {
         }
         if (action.type === 'REMOVE') {
             let indexToDecrease = arrayData.findIndex((item) => {
-                if (item.Id === action.removeItem.Id) {
+                if (item.id === action.removeItem.id) {
                     return true;
                 }
                 return false

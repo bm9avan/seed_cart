@@ -11,7 +11,7 @@ const EachCartItem = ({ eachItem }) => {
         <li className={styles.seed}>
             <h3 className={styles.title}>{eachItem.title}</h3>
             <span className={styles.qty}>
-                <input id={'num' + eachItem.Id} type="number" value={qty} min={0} max={5} onChange={(e) => {
+                <input id={'num' + eachItem.id} type="number" value={qty} min={0} max={5} onChange={(e) => {
                     setQty(parseInt(e.target.value))
                     setSaveDis(true)
                 }} />
@@ -19,11 +19,11 @@ const EachCartItem = ({ eachItem }) => {
                     setSaveDis(false);
                     if (qty > eachItem.qty) {
                         //we pass number of qty need to be increased
-                        ctx.onAddingToCart({ Id: eachItem.Id, title: eachItem.title, price: eachItem.price, qty: (qty - eachItem.qty) })
+                        ctx.onAddingToCart({ id: eachItem.id, title: eachItem.title, price: eachItem.price, qty: (qty - eachItem.qty) })
                     }
                     if (qty < eachItem.qty) {
                         // we pass directly result number of qty to be displayed  
-                        ctx.onRemovingFromCart({ Id: eachItem.Id, title: eachItem.title, price: eachItem.price, qty })
+                        ctx.onRemovingFromCart({ id: eachItem.id, title: eachItem.title, price: eachItem.price, qty })
                     }
                 }}>Save</button>}
             </span>

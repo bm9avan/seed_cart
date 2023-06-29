@@ -17,7 +17,7 @@ const CartView = ({ onCancel }) => {
                 <ul className={styles.ul}>
                     {!ctx.cartData.length && <h3 className={styles.seed}> no items added!</h3>}
                     {ctx.cartData.map((eachItem) => {
-                        return <EachCartItem key={'cart' + eachItem.Id} eachItem={eachItem} />
+                        return <EachCartItem key={'cart' + eachItem.id} eachItem={eachItem} />
                     })}
                 </ul>
                 <h4 className={styles.total}>Total Price : ₹{ctx.totalPrice} </h4>
