@@ -7,7 +7,7 @@ import EachCartItem from "./EachCartItem";
 
 const CartView = ({ onCancel }) => {
   const ctx = useContext(CartContextData);
-    
+
   return (
     <div>
       <div className={styles.backdrop} onClick={onCancel}></div>
@@ -31,7 +31,7 @@ const CartView = ({ onCancel }) => {
         <div className={styles.buttom}>
           <h4 className={styles.total}>Total Price : ₹{ctx.totalPrice} </h4>
           {ctx.totalPrice !== 0 && (
-            <button className={styles.btn} >CheckOut </button>
+            <button className={styles.btn}>CheckOut </button>
           )}
           {ctx.totalPrice === 0 && (
             <button className={styles.btn} onClick={onCancel}>

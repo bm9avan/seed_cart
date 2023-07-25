@@ -19,7 +19,6 @@ const Seeds = () => {
                     availableQty: data[each].availableQty
                 }
             })
-            console.log(arr)
             setSeedData(arr)
         }
     }
