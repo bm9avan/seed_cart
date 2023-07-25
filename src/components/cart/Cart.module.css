@@ -30,6 +30,12 @@
     margin-bottom: 0px;
 }
 
+.box h3 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
 .cancel {
     position: absolute;
     cursor: pointer;
@@ -91,6 +97,7 @@
     margin-left: 10px;
     width: 50%;
     height: 30px;
+    margin: auto 0;
 }
 
 .btn:hover,
@@ -98,8 +105,9 @@
     background-color: rgb(145, 116, 80);
 }
 
-.total {
-    text-align: center;
+.buttom{
+    display: flex;
+    justify-content: space-around;
 }
 
 @media only screen and (max-width: 920px) {
