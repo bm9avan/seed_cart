@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
+import { CartContextData } from "../../store/cart-context";
 import ReactDOM from "react-dom";
 import styles from "./Cart.module.css";
 import { GiCancel } from "react-icons/gi";
-import { CartContextData } from "../../store/cart-context";
-import EachCartItem from "./EachCartItem";
+import CartBody from "./CartBody";
+import { useNavigate } from "react-router-dom";
 
 const CartView = ({ onCancel }) => {
   const ctx = useContext(CartContextData);
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -18,24 +20,24 @@ const CartView = ({ onCancel }) => {
       >
         <h2>My Cart</h2>
         <GiCancel className={styles.cancel} onClick={onCancel} />
-        <ul className={styles.ul}>
-          {!ctx.cartData.length && (
-            <h3 className={styles.seed}> no items added!</h3>
-          )}
-          {ctx.cartData.map((eachItem) => {
-            return (
-              <EachCartItem key={"cart" + eachItem.id} eachItem={eachItem} />
-            );
-          })}
-        </ul>
+        <CartBody />
         <div className={styles.buttom}>
           <h4 className={styles.total}>Total Price : ₹{ctx.totalPrice} </h4>
           {ctx.totalPrice !== 0 && (
-            <button className={styles.btn}>CheckOut </button>
+            <button
+              className={styles.btn}
+              onClick={() => {
+                navigate("/checkout");
+                onCancel();
+              }}
+            >
+              {" "}
+              CheckOut{" "}
+            </button>
           )}
           {ctx.totalPrice === 0 && (
             <button className={styles.btn} onClick={onCancel}>
-              Add Items
+              Your cart is Empty ! Add Items
             </button>
           )}
         </div>

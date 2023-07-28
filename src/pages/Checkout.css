@@ -1,0 +1,29 @@
+.note {
+  text-align: center;
+  color: #999;
+  font-size: 24px;
+  margin-top: 20px;
+  position: relative;
+}
+
+/* Assuming the footer has a class of "footer" */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Optionally, you can style links in the footer */
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.link a {
+  display: block;
+}
