@@ -1,0 +1,26 @@
+/* Table Styles */
+.result {
+  width: 80%;
+  margin-top: 20px;
+  overflow-x: scroll;
+  font-size: 12px;
+  margin: auto;
+}
+
+.result th,
+.result td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.result th {
+  background-color: #f9f9f9;
+}
+
+.noData {
+  text-align: center;
+  font-weight: bold;
+  color: #999;
+  margin-top: 20px;
+}

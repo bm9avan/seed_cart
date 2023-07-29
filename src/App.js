@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./components/headerFooter/Header";
 import Seeds from "./components/seeds-body/Seeds";
+import UserTable from "./components/table/UserTable";
 import Checkout from "./pages/Checkout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -12,6 +13,15 @@ function App() {
       children: [
         { index: true, element: <Seeds /> },
         { path: "/checkout", element: <Checkout /> },
+        {
+          path: "/users",
+          element: (
+            <>
+              <br />
+              <UserTable />
+            </>
+          ),
+        },
       ],
     },
   ]);

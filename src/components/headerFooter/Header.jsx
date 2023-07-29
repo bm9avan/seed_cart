@@ -15,7 +15,7 @@ const Header = () => {
   let location = useLocation();
   const navigate = useNavigate();
   useEffect(() => {
-    if (location.pathname === "/checkout") {
+    if (location.pathname !== "/") {
       setInout(true);
     } else {
       setInout(false);
