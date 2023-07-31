@@ -25,7 +25,7 @@ const Form = () => {
     }
     sendData(
       {
-        url: "https://seed-cart-7d0b9-default-rtdb.asia-southeast1.firebasedatabase.app/users.json",
+        url: `${process.env.REACT_APP_API_URL}/users.json`,
         method: "POST",
         body: {
           name: nameRef.current.value,

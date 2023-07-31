@@ -9,7 +9,7 @@ const UserTable = () => {
   useEffect(() => {
     getData(
       {
-        url: "https://seed-cart-7d0b9-default-rtdb.asia-southeast1.firebasedatabase.app/users.json",
+        url: `${process.env.REACT_APP_API_URL}/users.json`,
       },
       (data) => setUserData(data)
     );

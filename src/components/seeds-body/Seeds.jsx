@@ -24,7 +24,7 @@ const Seeds = () => {
     }
 
     useEffect(() => {
-        getData({ url: "https://seed-cart-7d0b9-default-rtdb.asia-southeast1.firebasedatabase.app/seeds.json" }, (data) => refacter(data))
+        getData({ url: `${process.env.REACT_APP_API_URL}/seeds.json` }, (data) => refacter(data))
     }, [getData])
 
     return (
