@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Seed Cart - Your Gateway to Green
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+seed_cart is a web application built by following the tutorial by Maximilian Schwarzmüller and little bit of my own creativity 
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+To run the seed_cart application locally, follow these steps:
 
-### `npm start`
+1. Clone the repository:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+   ```shell
+   git clone https://github.com/bm9avan/seed_cart.git
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Navigate to the project directory:
 
-### `npm test`
+   ```shell
+   cd seed_cart
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Install the required dependencies:
 
-### `npm run build`
+   ```shell
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Start the application:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```shell
+   npm start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. Open your browser and visit `http://localhost:3000` to access the application.
 
-### `npm run eject`
+## Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Browse and Manage Seeds**: Explore the seeds available on the platform. Add new seeds, to buy.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Simulate Checkout**: Visit the /checkout page to simulate the checkout process. Select seeds, enter your details, and proceed. Note that this simulation does not involve payments.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. **View User Details**: Check the /users page to see a table displaying user-entered details from the /checkout simulation.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Technologies Used
 
-## Learn More
+The Expense Tracker application uses the following technologies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- HTML, CSS, JavaScript
+- React.js for front-end
+- FireBase to store seeds and users
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Credits
 
-### Code Splitting
+This project was built by following the tutorial by Maximilian Schwarzmüller, an AWS certified professional web developer and instructor. The tutorial provided the foundation and guidance for building the Expense Tracker application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Instructor: Maximilian Schwarzmüller
+- Udemy Course: [React - The Complete Guide 2023]([https://www.udemy.com/course/react-the-complete-guide-incl-redux/])
 
-### Analyzing the Bundle Size
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+For any questions or inquiries, please feel free to contact the project creator:
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Name: PAVAN
+- Email: mggpavan@gmail.com
+- Contact: [@bm9avan]([https://bm9avan.bio.link/])
