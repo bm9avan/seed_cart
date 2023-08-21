@@ -42,11 +42,12 @@ To run the seed_cart application locally, follow these steps:
 
 ## Technologies Used
 
-The Expense Tracker application uses the following technologies:
+The Seed Cart application uses the following technologies:
 
 - HTML, CSS, JavaScript
 - React.js for front-end
 - FireBase to store seeds and users
+- React-Toastify https://www.npmjs.com/package/react-toastify
 
 ## Credits
 
